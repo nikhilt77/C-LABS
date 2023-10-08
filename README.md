@@ -1,2 +1,2 @@
 # College
-This my github repository listing some of the basic programs in C
+This my github repository listing some of the basic programs in C and JAVA
