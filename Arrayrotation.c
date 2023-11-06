@@ -1,47 +1,44 @@
-  #include <stdio.h>
-
-int main() {
-    int r1, c1, k = 0, flag = 0;
-    printf("Enter no. of rows: ");
-    scanf("%d", &r1);
-    printf("Enter no. of columns: ");
-    scanf("%d", &c1);
-    int A[r1][c1];
-
-    printf("Enter elements: ");
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c1; j++) {
-            scanf("%d", &A[i][j]);
-            if (A[i][j] != 0) {
-                flag++;
-            }
+#include <stdio.h>
+void rotate(int a[],int n,int d,int cr)
+{
+    int temp;
+    for(int i=0;i<cr;i++)
+ {
+    if(d==1)
+    {
+      for(int j=0;j<n-1;j++)
+     {
+        temp=a[j];
+        a[j]=a[j+1];
+        a[j+1]=temp;
+     }
+    }
+    if(d==2)
+    {
+        for(int j=n-1;j>0;j--)
+        {
+            temp=a[j];
+            a[j]=a[j-1];
+            a[j-1]=temp;
         }
     }
-
-    int sparse[flag + 1][3];  // Increase the size by 1
-
-    sparse[0][0] = r1;
-    sparse[0][1] = c1;
-    sparse[0][2] = flag;
-
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c1; j++) {
-            if (A[i][j] != 0) {
-                k++;
-                sparse[k][0] = i;
-                sparse[k][1] = j;
-                sparse[k][2] = A[i][j];
-            }
-        }
+ }
+ for(int i=0;i<n;i++)
+ printf("%d",a[i]);
+}
+int main()
+{
+    int b[20],len,count,ch;
+    printf("enter array size");
+    scanf("%d",&len);
+    printf("enter count of rotation");
+    scanf("%d",&count);
+    printf("enter direction of rotation");
+    scanf("%d",&ch);
+    printf("enter the array elements");
+    for(int i=0;i<len;i++)
+    {
+        scanf("%d",&b[i]);
     }
-
-    printf("Sparse: \n");
-    for (int i = 0; i <= flag; i++) {  // Change the loop condition
-        for (int j = 0; j < 3; j++) {
-            printf("%d\t", sparse[i][j]);
-        }
-        printf("\n");
-    }
-
-    return 0;
+    rotate(b,len,ch,count);
 }
