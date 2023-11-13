@@ -19,7 +19,7 @@ class Garb
       System.out.println ("Enter size of an array:");
     int z = P.nextInt ();
     int A[] = new int[z];
-    for (int i = 1; i < 10; i++)
+    for (int i = 1; i < z; i++)
       {
 	Garbage y = new Garbage ();
       }
