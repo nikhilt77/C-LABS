@@ -23,3 +23,6 @@ int main(){
     }
     return 0;
 }
+/*  OUTPUT-
+    40->50->60
+*/
