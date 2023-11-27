@@ -79,3 +79,11 @@ public class FileHandlingPalindrome {
 	}
 
 }
+/*OUTPUT
+Enter Filename:
+abcd
+File Created at:/Users/nikhiltomy/eclipse/java-2023-09/Eclipse.app/Java/abcd
+Enter String to input into file:
+malayalam
+File content is palindrome
+*/
