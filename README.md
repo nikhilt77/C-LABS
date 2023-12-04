@@ -1,6 +1,7 @@
 # College
 
-This repository contains various programs written in Java and C as part of college coursework.
+Hey Guys..!
+So this repo contains some of the basic programs written using JAVA and C.These programs were done as part of my College coursework.Hope you guys find it usefull and do create an issue if you come across an error.So..Happy Coding..
 
 ## Table of Contents
 
