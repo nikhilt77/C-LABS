@@ -51,8 +51,8 @@ void main(){
     char postfix[M_Size];
     printf("Enter postfix expression:");
     scanf("%s",&postfix);
-    for(int i=0;infix[i]!='\0';i++){
-        pass(infix[i]);
+    for(int i=0;postfix[i]!='\0';i++){
+        pass(postfix[i]);
     }
     printf("Result:\n");
     printf("%d",stack[top]);
