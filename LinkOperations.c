@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 struct node{
     int data;
     struct node*next;
@@ -69,7 +70,7 @@ void display(){
     else{
         current=front;
         while(current->next!=NULL){
-            printf("%d",current->data);
+            printf("%d->",current->data);
             current=current->next;
         }
         printf("%d",current->data);
@@ -79,6 +80,7 @@ void display(){
     }
 int main(){
     int x,ch;
+    while(true){
     printf("1.InsertFront\n2.InsertRear\n3.DeleteFront\n4.DeleteRear\n5.Display\n6.Exit\n");
     printf("Enter your choice:\n");
     scanf("%d",&ch);
@@ -107,4 +109,5 @@ int main(){
         break;
         default:
         printf("Invalid choice\n");}
+}
 }
