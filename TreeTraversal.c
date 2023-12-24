@@ -44,6 +44,31 @@ void postorder(struct Node* root)
     }
 }
 
+void deleteNode(struct Node** root, int key) {
+    if (*root == NULL) return;
+    if (key < (*root)->key)
+        deleteNode(&((*root)->left), key);
+    else if (key > (*root)->key)
+        deleteNode(&((*root)->right), key);
+    else {
+        if ((*root)->left == NULL) {
+            struct Node *temp = *root;
+            *root = (*root)->right;
+            free(temp);
+        }
+        else if ((*root)->right == NULL) {
+            struct Node *temp = *root;
+            *root = (*root)->left;
+            free(temp);
+        }
+        else {
+            int minKey = minimum((*root)->right);
+            (*root)->key = minKey;
+            deleteNode(&((*root)->right), minKey);
+        }
+    }
+}
+
 struct Node* insert(struct Node* node, int key)
 {
     if (node == NULL)
@@ -79,18 +104,18 @@ int maximum(struct Node* root){
     if(root==NULL)
         return 0;
     else{
-            while(root->right!=NULL){
-                root=root->right;
-            }
-            return root->key;
+        while(root->right!=NULL){
+            root=root->right;
         }
+        return root->key;
+    }
 }
 
 int main()
 {
     int ch,key;
     while(1){
-        printf("\n1.Insert\n2.Search\n3.Minimum\n4.Maximum\n5.Inorder\n6.Preorder\n7.Postorder\n8.Exit\n");
+        printf("\n1.Insert\n2.Search\n3.Minimum\n4.Maximum\n5.Inorder\n6.Preorder\n7.Postorder\n8.Delete\n9.Exit\n");
         printf("Enter your choice:");
         scanf("%d",&ch);
         switch(ch){
@@ -124,6 +149,11 @@ int main()
                 postorder(root);
                 break;
             case 8:
+                printf("Enter the key to delete:");
+                scanf("%d", &key);
+                deleteNode(&root, key);
+                break;
+            case 9:
                 exit(0);
         }
     }
