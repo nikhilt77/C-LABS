@@ -1509,8 +1509,8 @@ DEFINE STRUCTURE Node
     DEFINE Node POINTER left
     DEFINE Node POINTER right
 
-DEFINE Node POINTER root = NULL
-DEFINE Node POINTER temp = NULL
+SET Node POINTER root = NULL
+SET Node POINTER temp = NULL
 
 DEFINE FUNCTION newNode(INTEGER key) RETURNS Node POINTER
     SET Node POINTER node = Allocate memory for Node
@@ -1541,23 +1541,23 @@ DEFINE FUNCTION delete(Node POINTER root, INTEGER key)
     IF root == NULL
         RETURN
     IF key < root->key
-        CALL delete(root->left, key)
+        SET root->left = CALL delete(root->left, key)
     ELSE IF key > root->key
-        CALL delete(root->right, key)
+        SET root->right = CALL delete(root->right, key)
     ELSE
         IF root->left == NULL AND root->right == NULL
             FREE root
             SET root = NULL
         ELSE IF root->left == NULL
-            DEFINE Node POINTER temp = root
+            SET Node POINTER temp = root
             SET root = root->right
             FREE temp
         ELSE IF root->right == NULL
-            DEFINE Node POINTER temp = root
+            SET Node POINTER temp = root
             SET root = root->left
             FREE temp
         ELSE
-            DEFINE INTEGER temp = CALL minimum(root->right)
+            SET INTEGER temp = CALL minimum(root->right)
             SET root->key = temp
             CALL delete(root->right, temp)
 
@@ -1592,9 +1592,9 @@ DEFINE FUNCTION maximum(Node POINTER root) RETURNS INTEGER
     RETURN root->key
 
 DEFINE FUNCTION main() RETURNS INTEGER
-    DEFINE INTEGER ch, key
+    SET INTEGER ch, key
     WHILE TRUE
-        PRINT "1.Insert 2.Search 3.Minimum 4.Maximum 5.Inorder 6.Preorder 7.Postorder 8.Delete 9.Exit"
+        PRINT "1.Insert 2.Search 3.Minimum 4.Maximum 5.Inorder 6.Preorder 7.Postorder         8.Delete 9.Exit"
         PRINT "Enter your choice:"
         READ ch
         SWITCH ch
@@ -1627,6 +1627,7 @@ DEFINE FUNCTION main() RETURNS INTEGER
             CASE 9:
                 EXIT program
     RETURN 0
+END WHILE
 END PROCEDURE
 END PROGRAM
 ```
