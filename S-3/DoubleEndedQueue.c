@@ -93,10 +93,9 @@ int main(){
                     break;
             case 5:display();
                     break;
-           
             case 6: exit(0);
             		break;
-             default:printf("Invalid choice\n");		
+            default:printf("Invalid choice\n");		
         }
     }
 }
