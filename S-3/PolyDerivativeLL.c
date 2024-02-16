@@ -33,7 +33,7 @@ void display(struct node**h1){
         printf("%dx^%d+",curr->coeff,curr->expo);
         curr=curr->next;
     }
-    printf("%dx^%d",curr->coeff,curr->expo);
+    printf("%dx^%d\n",curr->coeff,curr->expo);
 }
 
 void main(){
