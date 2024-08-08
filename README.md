@@ -2,7 +2,7 @@
 # C-LABS
 
 Hey..!
-So this repo contains some of the basic programs written using C.These programs were done as part of my College coursework.Hope you guys find it usefull and do create an issue if you come across an error.Also,this is not a final copy and the files are being updated everyday, so do bear with the untidy arrangement of the files.
+So this repo contains some of the basic programs written using C and C++.These programs were done as part of my College coursework.Hope you guys find it usefull and do create an issue if you come across an error.Also,this is not a final copy and the files are being updated everyday, so do bear with the untidy arrangement of the files.
 So..Happy Coding..!
 ## Contents
 
