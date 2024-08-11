@@ -8,7 +8,6 @@ public:
     long long sumOfDivisors(int n)
     {
         long  sum=0;
-        // Write Your Code here
         for(int i=1;i<=n;i++){
             sum+=(n/i)*i;
         }
